@@ -20,10 +20,12 @@ __declspec(dllexport) void Init_aesruby(void);
 static VALUE AES;
 static VALUE AES_EncStr;
 
+/* */
 static VALUE aesruby_encstr_get_srclen(VALUE self) {
   return rb_ivar_get(self, rb_intern("@srclen"));
 }
 
+/* */
 static VALUE aesruby_encstr_set_srclen(VALUE self, VALUE srclen) {
   return rb_ivar_set(self, rb_intern("@srclen"), srclen);
 }
@@ -47,6 +49,7 @@ static void aesruby_chack_key(VALUE key) {
   }
 }
 
+/* */
 static VALUE aesruby_encrypt0(VALUE self, VALUE key, VALUE src,
                               AES_RETURN (*encrypt_function)(const unsigned char *, unsigned char *, int, const aes_encrypt_ctx *cx)) {
   VALUE encrypted;
@@ -91,6 +94,7 @@ static VALUE aesruby_encrypt0(VALUE self, VALUE key, VALUE src,
   return encrypted;
 }
 
+/* */
 static VALUE aesruby_decrypt0(VALUE self, VALUE key, VALUE encrypted,
                               AES_RETURN (*decrypt_function)(const unsigned char *, unsigned char *, int, const aes_decrypt_ctx *)) {
   VALUE decrypted;
@@ -128,10 +132,12 @@ static VALUE aesruby_decrypt0(VALUE self, VALUE key, VALUE encrypted,
   return decrypted;
 }
 
+/* */
 static VALUE aesruby_ecb_encrypt(VALUE self, VALUE key, VALUE src) {
   return aesruby_encrypt0(self, key, src, aes_ecb_encrypt);
 }
 
+/* */
 static VALUE aesruby_ecb_decrypt(VALUE self, VALUE key, VALUE encrypted) {
   return aesruby_decrypt0(self, key, encrypted, aes_ecb_decrypt);
 }
@@ -146,10 +152,12 @@ static AES_RETURN aes_cbc_decrypt0(const unsigned char *ibuf, unsigned char *obu
   return aes_cbc_decrypt(ibuf, obuf, len, iv, cx);
 }
 
+/* */
 static VALUE aesruby_cbc_encrypt(VALUE self, VALUE key, VALUE src) {
   return aesruby_encrypt0(self, key, src, aes_cbc_encrypt0);
 }
 
+/* */
 static VALUE aesruby_cbc_decrypt(VALUE self, VALUE key, VALUE encrypted) {
   return aesruby_decrypt0(self, key, encrypted, aes_cbc_decrypt0);
 }

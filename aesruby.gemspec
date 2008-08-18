@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.name              = 'aesruby'
   spec.version           = '0.1.0'
-  spec.summary           = 'Ruby bindings for LibLZF.'
+  spec.summary           = 'Ruby bindings for C implementation of AES.'
   spec.files             = Dir.glob('ext/*.{c,h}') + %w(ext/extconf.rb README.txt)
   spec.author            = 'abc'
   spec.email             = 'abc@example.com'
