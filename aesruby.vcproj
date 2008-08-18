@@ -45,6 +45,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)\ext&quot;;&quot;C:\usr\local\ruby-1.8\lib\ruby\1.8\i386-mswin32&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;AESRUBY_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -64,7 +65,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="msvcrt-ruby18.lib"
+				OutputFile="$(OutDir)\$(ProjectName).so"
 				LinkIncremental="2"
+				AdditionalLibraryDirectories="&quot;C:\usr\local\ruby-1.8\lib&quot;"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				TargetMachine="1"
@@ -118,8 +122,9 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)\ext&quot;;&quot;C:\usr\local\ruby-1.8\lib\ruby\1.8\i386-mswin32&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;AESRUBY_EXPORTS"
-				RuntimeLibrary="2"
+				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
@@ -136,7 +141,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="msvcrt-ruby18.lib"
+				OutputFile="$(OutDir)\$(ProjectName).so"
 				LinkIncremental="1"
+				AdditionalLibraryDirectories="&quot;C:\usr\local\ruby-1.8\lib&quot;"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
@@ -169,6 +177,58 @@
 	<References>
 	</References>
 	<Files>
+		<Filter
+			Name="ext"
+			>
+			<File
+				RelativePath=".\ext\aes.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\aes_modes.c"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\aes_via_ace.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\aescrypt.c"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\aeskey.c"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\aesopt.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\aesruby.c"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\aesruby.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\aestab.c"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\aestab.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\brg_endian.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ext\brg_types.h"
+				>
+			</File>
+		</Filter>
 	</Files>
 	<Globals>
 	</Globals>
