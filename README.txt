@@ -2,7 +2,7 @@
 
 == Description
 
-Ruby bindings for implementation of AES.
+Ruby bindings for C implementation of AES.
 
 == Example
 

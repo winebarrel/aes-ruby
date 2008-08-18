@@ -234,6 +234,14 @@
 			</File>
 		</Filter>
 		<File
+			RelativePath=".\aesruby.gemspec"
+			>
+		</File>
+		<File
+			RelativePath=".\build.sh"
+			>
+		</File>
+		<File
 			RelativePath=".\README.txt"
 			>
 		</File>
