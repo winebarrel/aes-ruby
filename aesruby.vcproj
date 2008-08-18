@@ -234,7 +234,7 @@
 			</File>
 		</Filter>
 		<File
-			RelativePath=".\ext\README.txt"
+			RelativePath=".\README.txt"
 			>
 		</File>
 	</Files>
